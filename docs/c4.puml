@@ -1,0 +1,50 @@
+@startuml
+title Libra — C4 Container Diagram
+
+left to right direction
+
+skinparam backgroundColor white
+skinparam shadowing false
+skinparam linetype ortho
+
+skinparam rectangle {
+    BorderColor #333333
+    BackgroundColor white
+    FontColor #222222
+    RoundCorner 10
+}
+
+skinparam database {
+    BorderColor #333333
+    BackgroundColor white
+    FontColor #222222
+}
+
+actor "Читатель" as reader
+actor "Библиотекарь" as librarian
+
+rectangle "LIBRA\nСистема управления библиотекой" {
+
+    rectangle "Web Application\nHTML / CSS / JavaScript\nИнтерфейс системы" as web
+
+    rectangle "Backend API\nPython / FastAPI\nREST • JWT • RBAC" as api
+
+    database "PostgreSQL\nОсновная БД" as db
+
+    rectangle "Redis\nКэш / Broker" as redis
+
+    rectangle "Celery Worker\nФоновые задачи" as worker
+}
+
+reader --> web
+librarian --> web
+
+web --> api
+api --> db
+api --> redis
+api --> worker
+
+worker --> redis
+worker --> db
+
+@enduml

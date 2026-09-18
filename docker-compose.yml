@@ -1,0 +1,16 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: libra-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: libra
+      POSTGRES_USER: libra
+      POSTGRES_PASSWORD: libra_password
+    ports:
+      - "5433:5432"
+    volumes:
+      - libra_postgres_data:/var/lib/postgresql/data
+
+volumes:
+  libra_postgres_data:

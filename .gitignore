@@ -1,0 +1,94 @@
+# Python
+
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Python cache / test cache
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+.coverage.*
+htmlcov/
+
+# Virtual environments
+
+.venv/
+venv/
+env/
+ENV/
+
+# Environment variables / secrets
+
+.env
+.env.*
+!.env.example
+
+# Poetry
+
+# Poetry virtual environments
+poetry.toml
+
+# IDE
+
+.vscode/
+.idea/
+
+# VS Code local files
+*.code-workspace
+
+# Operating system
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# macOS
+.DS_Store
+
+# Linux
+*~
+
+# Logs
+
+*.log
+logs/
+
+# Database / local data
+
+*.sqlite
+*.sqlite3
+*.db
+
+# PostgreSQL local data
+postgres_data/
+pgdata/
+
+# Docker
+
+docker-compose.override.yml
+
+# Build / distribution
+
+build/
+dist/
+*.egg-info/
+
+# Temporary files
+
+*.tmp
+*.temp
+*.bak
+*.swp
+
+# Coverage / reports
+
+coverage.xml
+coverage.json
+
+# Local project files
+
+.idea/
+.vscode/
